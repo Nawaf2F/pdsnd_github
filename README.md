@@ -11,14 +11,14 @@
 
 - **writing a script that takes in raw input to create an interactive experience in the terminal to present these statistics.**
 
-
+---
 ## **Software requirements**
 ---
 - **Python 3, NumPy, and pandas installed using Anaconda.**
 - **A text editor, like Sublime or Atom.**
 - **A terminal application (Terminal on Mac and Linux or Cygwin on Windows).**
 
-
+---
 ## **The Datasets**
 ---
 **Randomly selected data for the first six months of 2017 are provided for all three cities. All three of the data files contain the same core six (6) columns:**
@@ -36,7 +36,7 @@
 #### 7. Gender
 #### 8. Birth Year
 
-
+---
 ## **Statistics Computed**
 ---
 **The program should help the user to learn about bike share use in Chicago, New York City, and Washington by computing a variety of descriptive statistics.** 
@@ -66,7 +66,7 @@
 - counts of each gender (only available for NYC and Chicago)
 - earliest, most recent, most common year of birth (only available for NYC and Chicago)
 
-
+---
 ## **Files**
 ---
 #### 1. US_Bikeshare.ipynp
@@ -77,7 +77,7 @@
 
 #### 4. washington.csv
 
-
+---
 ## **Interactive Experience**
 ---
 **The code is set up as a script that takes in raw input to create an interactive experience in the terminal that answers questions about the dataset.**
@@ -92,9 +92,9 @@
 
 **The answers to the questions above will determine the city and timeframe on which you'll do data analysis.**
 
-**After filtering the dataset, users will see the statistical result of the data, and choose to start again or exit.**
+>After filtering the dataset, users will see the statistical result of the data, and choose to start again or exit.
 
-
+---
 ## **Additional**
 ---
 **The program has additional features:**
@@ -116,7 +116,7 @@
 
 - **days():** The user will enter the number of 'day of week' and this function will convert it to the corresponding string. 
 
-    - **example: 1 is Sunday, 2 is monday ..... 7 is Saturday**
+>- Example: if the user entered 1 then it is Sunday, 2 is monday ..... 7 is Saturday
 
 - **stats():** The user will enter which statistics to display and this function will help us by filtering.
 
