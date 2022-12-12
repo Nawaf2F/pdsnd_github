@@ -110,8 +110,6 @@
 ---
 - **get_filters():** to get the user filter, and to make sure the input is valid
 
-- **cities(p):** The user will enter a number from 1 to 3, each number will represents one of the cities and in this function the number will be converted to the corresponding string.
-
 - **months():** The user will enter the number of the month and this function will convert it to the corresponding string.
 
 - **days():** The user will enter the number of 'day of week' and this function will convert it to the corresponding string. 
