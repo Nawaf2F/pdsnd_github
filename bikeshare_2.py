@@ -73,7 +73,7 @@ def get_filters():
         try:
             # get user filter
             prGreen('\nWhich Stats Data Do You Want To See? (please enter a number)')
-            st = int(
+            stats_choice = int(
                 input('1.Frequent times\t2.Popular stations\t3.Trip durations\t4.Users stats\t5.All stats\n'))
 
         # If the user did not enter an integer
@@ -82,7 +82,7 @@ def get_filters():
 
         # Did not catch a ValueError
         else:
-            if st in [1, 2, 3, 4, 5]:
+            if stats_choice in [1, 2, 3, 4, 5]:
                 break
 
             # If the user did not enter the correct integer
@@ -90,7 +90,7 @@ def get_filters():
                 prRed('Not a valid number, Try again!!\n')
 
     print('-' * 40)
-    return city, month, day, st
+    return city, month, day, stats_choice
 
 
 def months():
@@ -167,17 +167,17 @@ def days():
                 prRed('Not a valid number, Try again!!\n')
 
 
-def stats(st, df, city, h):
+def stats(stats_choice, df, city, h):
     """Filtering the request of the user
-       Arguments: st(int), df(DataFrame), city(str), h(int)"""
+       Arguments: stats_choice(int), df(DataFrame), city(str), h(int)"""
 
-    if st in [1, 5]:
+    if stats_choice in [1, 5]:
         time_stats(df, h)
-    if st in [2, 5]:
+    if stats_choice in [2, 5]:
         station_stats(df, h)
-    if st in [3, 5]:
+    if stats_choice in [3, 5]:
         trip_duration_stats(df)
-    if st in [4, 5]:
+    if stats_choice in [4, 5]:
         user_stats(df, city, h)
 
 
@@ -376,7 +376,7 @@ def user_stats(df, city, h):
 
 def main():
     while True:
-        city, month, day, st = get_filters()
+        city, month, day, stats_choice = get_filters()
         df = load_data(city, month, day)
 
         # Using h as a counter
@@ -386,7 +386,7 @@ def main():
             h = h + 5
 
             # Stats filter
-            stats(st, df, city, h)
+            stats(stats_choice, df, city, h)
 
             # Print filters
             prCyan('\nFiltered by:')
