@@ -259,33 +259,33 @@ def station_stats(df, h):
     # -------------- Display most commonly used start station --------------
 
     # creating a DataFrame
-    uss = pd.DataFrame(df['Start Station'].value_counts())
-    uss = uss.rename(columns={'Start Station': 'Count'})
+    start_station = pd.DataFrame(df['Start Station'].value_counts())
+    start_station = start_station.rename(columns={'Start Station': 'Count'})
 
     # print
     prCyan('Commonly Used Start Station:')
-    print(uss.head(h), '\n')
+    print(start_station.head(h), '\n')
 
     # -------------- Display most commonly used end station --------------
 
     # creating a DataFrame
-    ues = pd.DataFrame(df['End Station'].value_counts())
-    ues = ues.rename(columns={'End Station': 'Count'})
+    end_station = pd.DataFrame(df['End Station'].value_counts())
+    end_station = end_station.rename(columns={'End Station': 'Count'})
 
     # print
     prCyan('Commonly Used End Station:')
-    print(ues.head(h), '\n')
+    print(end_station.head(h), '\n')
 
     # -------------- Display most frequent combination of start station and end station trip --------------
 
     # creating a DataFrame
     df['Combination'] = df['Start Station'] + ' To ' + df['End Station']
-    sae = pd.DataFrame(df['Combination'].value_counts())
-    sae = sae.rename(columns={'Combination': 'Count'})
+    combination = pd.DataFrame(df['Combination'].value_counts())
+    combination = combination.rename(columns={'Combination': 'Count'})
 
     # print
     prCyan('Most Frequent Combination Stations:')
-    print(sae.head(h), '\n')
+    print(combination.head(h), '\n')
 
     prGreen("\nThis took %s seconds." % (time.time() - start_time))
     print('-' * 40)
